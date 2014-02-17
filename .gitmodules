@@ -1,0 +1,30 @@
+[submodule "dev_box_recipes/cookbooks/openssl"]
+	path = dev_box_recipes/cookbooks/openssl
+	url = https://github.com/opscode-cookbooks/openssl.git
+[submodule "dev_box_recipes/cookbooks/system_packages"]
+	path = dev_box_recipes/cookbooks/system_packages
+	url = https://github.com/coroutine/chef-system_packages.git
+[submodule "dev_box_recipes/cookbooks/rvm"]
+	path = dev_box_recipes/cookbooks/rvm
+	url = https://github.com/fnichol/chef-rvm.git
+[submodule "dev_box_recipes/cookbooks/apt"]
+	path = dev_box_recipes/cookbooks/apt
+	url = https://github.com/opscode-cookbooks/build-essential.git
+[submodule "dev_box_recipes/cookbooks/ohmyzsh"]
+	path = dev_box_recipes/cookbooks/ohmyzsh
+	url = https://github.com/binaryphile/chef-ohmyzsh.git
+[submodule "dev_box_recipes/cookbooks/mysql"]
+	path = dev_box_recipes/cookbooks/mysql
+	url = https://github.com/opscode-cookbooks/mysql.git
+[submodule "dev_box_recipes/cookbooks/git"]
+	path = dev_box_recipes/cookbooks/git
+	url = https://github.com/opscode-cookbooks/git.git
+[submodule "dev_box_recipes/cookbooks/build-essential"]
+	path = dev_box_recipes/cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential.git
+[submodule "dev_box_recipes/cookbooks/jbossas7"]
+	path = dev_box_recipes/cookbooks/jbossas7
+	url = https://github.com/wharton/chef-jbossas7.git
+[submodule "dev_box_recipes/cookbooks/maven"]
+	path = dev_box_recipes/cookbooks/maven
+	url = https://github.com/opscode-cookbooks/maven.git
