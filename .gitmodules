@@ -28,3 +28,9 @@
 [submodule "dev_box_recipes/cookbooks/maven"]
 	path = dev_box_recipes/cookbooks/maven
 	url = https://github.com/opscode-cookbooks/maven.git
+[submodule "dev_box_recipes/cookbooks/java"]
+	path = dev_box_recipes/cookbooks/java
+	url = https://github.com/socrata-cookbooks/java.git
+[submodule "dev_box_recipes/cookbooks/ark"]
+	path = dev_box_recipes/cookbooks/ark
+	url = https://github.com/opscode-cookbooks/ark.git

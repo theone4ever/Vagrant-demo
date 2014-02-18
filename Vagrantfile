@@ -3,6 +3,8 @@
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
+$vm_memory ||= "2048"
+$vm_cpus ||= "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
@@ -14,7 +16,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://github.com/downloads/roderik/VagrantQuantal64Box/quantal64.box"
+  config.vm.box_url = "file:/home/eqqiwng/Desktop/precise64.box"
+
+  config.vm.provider :virtualbox do |vb|
+    # # Don't boot with headless mode
+    #vb.gui = true
+    vb.customize ["modifyvm", :id, "--memory", $vm_memory]
+    vb.customize ["modifyvm", :id, "--cpus", $vm_cpus]
+  end
 
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -27,8 +36,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network :private_network, ip: "192.168.33.10"
 
    # add vagrant user in admin group, thus capable of performing sudo commands
-  config.vm.provision "shell", inline: "sudo usermod -g admin vagrant"
+  config.vm.provision :shell, :path => "bootstrap.sh"
 
+ 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
@@ -134,6 +144,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #chef.add_recipe "rvm::vagrant" # already in ohmyzsh
     #chef.add_recipe "rvm::user" #already in ohmyzsh
     chef.add_recipe "system_packages"
+    chef.add_recipe "java::default"
+    chef.add_recipe "ark"
+    #chef.add_recipe "maven"
+    #chef.add_recipe "jboss"    
     #chef.add_role "web"
     #chef.log_level = :debug
     #
